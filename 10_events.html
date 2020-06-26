@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Events!</title>
+
+  <style>
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .jumbotron {
+      height: 200px;
+      width: 37%;
+      background-color: rgb(213, 218, 223);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 300;
+    }
+    .user-text {
+      font-weight: 900;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h2>You just typed <span id="user-text"><strong>...Nothing.</strong></span></h2>
+    </div>
+  </div>
+
+  <!-- We have to put this at the end of our document to ensure the user-text
+         span exists when we try to access it. -->
+  <script type="text/javascript">
+    // Let's start by grabbing a reference to the <span> below.
+    var userText = document.getElementById("user-text");
+
+    // Next, we give JavaScript a function to execute when onkeyup event fires.
+    document.onkeyup = function (event) {
+      userText.textContent = event.key;
+    };
+  </script>
+</body>
+
+</html>
